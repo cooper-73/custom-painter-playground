@@ -12,8 +12,8 @@ abstract class AppTextTheme {
     // Card titles ("Spirograph", "Clock Face")
     titleMedium: TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.w500,
-      height: 24 / 16,
+      fontWeight: FontWeight.bold,
+      height: 20 / 16,
       letterSpacing: 0.1,
     ),
     // Small subtitles or labels ("Mathematical Art", "Fractals", "Basic Shapes")
