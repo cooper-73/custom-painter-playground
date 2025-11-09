@@ -37,28 +37,34 @@ class _NestedNavigationScaffoldState extends State<NestedNavigationScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: widget.body,
-      bottomNavigationBar: ValueListenableBuilder(
-        valueListenable: _selectedIndex,
-        builder: (context, selectedIndex, child) {
-          return NavigationBar(
-            selectedIndex: selectedIndex,
-            onDestinationSelected: _onDestinationSelected,
-            destinations: [
-              const NavigationDestination(
-                icon: Icon(Icons.explore_outlined),
-                label: 'Explore',
-              ),
-              const NavigationDestination(
-                icon: Icon(Icons.favorite_outline),
-                label: 'Favorites',
-              ),
-              const NavigationDestination(
-                icon: Icon(Icons.settings_outlined),
-                label: 'Settings',
-              ),
-            ],
-          );
-        },
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Divider(height: 1),
+          ValueListenableBuilder(
+            valueListenable: _selectedIndex,
+            builder: (context, selectedIndex, child) {
+              return NavigationBar(
+                selectedIndex: selectedIndex,
+                onDestinationSelected: _onDestinationSelected,
+                destinations: [
+                  const NavigationDestination(
+                    icon: Icon(Icons.explore_outlined),
+                    label: 'Explore',
+                  ),
+                  const NavigationDestination(
+                    icon: Icon(Icons.favorite_outline),
+                    label: 'Favorites',
+                  ),
+                  const NavigationDestination(
+                    icon: Icon(Icons.settings_outlined),
+                    label: 'Settings',
+                  ),
+                ],
+              );
+            },
+          ),
+        ],
       ),
     );
   }
