@@ -7,30 +7,39 @@ abstract class AppTheme {
     fontFamily: 'SpaceGrotesk',
     textTheme: AppTextTheme.textTheme,
     appBarTheme: const AppBarTheme(
-      foregroundColor: AppColors.darkAppBarForeground,
+      foregroundColor: AppDarkThemeColors.appBarForeground,
       surfaceTintColor: Colors.transparent,
     ),
-    navigationBarTheme: const NavigationBarThemeData(
+    navigationBarTheme: NavigationBarThemeData(
       indicatorColor: Colors.transparent,
+      labelTextStyle: WidgetStateProperty.fromMap({
+        WidgetState.selected: AppTextTheme.textTheme.labelLarge!.copyWith(
+          color: AppDarkThemeColors.bottomBarSelected,
+        ),
+      }),
+      iconTheme: const WidgetStateProperty.fromMap({
+        WidgetState.selected: IconThemeData(
+          color: AppDarkThemeColors.bottomBarSelected,
+        ),
+      }),
     ),
     colorScheme:
         ColorScheme.fromSeed(
-          seedColor: AppColors.darkPrimaryContainer,
+          seedColor: AppDarkThemeColors.primaryContainer,
           brightness: Brightness.dark,
         ).copyWith(
-          primary: AppColors.darkPrimary,
-          primaryContainer: AppColors.darkPrimaryContainer,
-          secondary: AppColors.darkSecondary,
-          onSecondary: AppColors.darkOnSecondary,
-          onSecondaryContainer: AppColors.darkOnSecondaryContainer,
-          surface: AppColors.darkSurface,
-          surfaceContainer: AppColors.darkSurface,
-          surfaceContainerHighest: AppColors.darkSurfaceContainerHighest,
-          surfaceContainerLow: AppColors.darkSurfaceContainerLow,
-          onSurface: AppColors.darkOnSurface,
-          onSurfaceVariant: AppColors.darkOnSurfaceVariant,
-          outline: AppColors.darkOutline,
-          outlineVariant: AppColors.darkOutlineVariant,
+          primary: AppDarkThemeColors.primary,
+          primaryContainer: AppDarkThemeColors.primaryContainer,
+          secondary: AppDarkThemeColors.secondary,
+          onSecondary: AppDarkThemeColors.onSecondary,
+          surface: AppDarkThemeColors.surface,
+          surfaceContainer: AppDarkThemeColors.surface,
+          surfaceContainerHighest: AppDarkThemeColors.surfaceContainerHighest,
+          surfaceContainerLow: AppDarkThemeColors.surfaceContainerLow,
+          onSurface: AppDarkThemeColors.onSurface,
+          onSurfaceVariant: AppDarkThemeColors.onSurfaceVariant,
+          outline: AppDarkThemeColors.outline,
+          outlineVariant: AppDarkThemeColors.outlineVariant,
         ),
   );
 }
