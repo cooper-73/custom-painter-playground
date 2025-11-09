@@ -1,4 +1,5 @@
 import 'package:custom_painter_playground/core/core.dart';
+import 'package:custom_painter_playground/presentation/explore/explore.dart';
 import 'package:flutter/material.dart';
 
 class ExplorePage extends StatelessWidget {
@@ -6,6 +7,9 @@ class ExplorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppScaffold(body: Center(child: Text('Explore Page')));
+    return const AppScaffold(
+      title: 'Custom Painter Playground',
+      body: ExploreGrid(),
+    );
   }
 }
