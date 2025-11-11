@@ -4,13 +4,15 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRoutes {
   static const explore = '/explore';
-  static const playground = '/playground/:${AppPathParameters.painterId}';
+  static const playground = '/playground/:${AppPathParameters.patternId}';
   static const favorites = '/favorites';
   static const settings = '/settings';
+
+  static String playgroundPath(String patternId) => '/playground/$patternId';
 }
 
 abstract class AppPathParameters {
-  static const painterId = 'painterId';
+  static const patternId = 'patternId';
 }
 
 final appRouter = GoRouter(
@@ -41,7 +43,12 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.playground,
-      builder: (context, state) => const PlaygroundPage(),
+      builder: (context, state) {
+        final patternId = state.pathParameters[AppPathParameters.patternId] ?? '';
+        final patternKind = PatternKindX.fromString(patternId); // TODO: Handle ArgumentError
+
+        return PlaygroundPage(patternKind: patternKind);
+      },
     ),
   ],
 );

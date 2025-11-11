@@ -5,10 +5,12 @@ class AppScaffold extends StatelessWidget {
     super.key,
     this.title,
     required this.body,
+    this.centerTitle = false,
   });
 
   final String? title; // TODO: Make this required
   final Widget body;
+  final bool centerTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class AppScaffold extends StatelessWidget {
           children: [
             AppBar(
               title: Text(title ?? ''),
-              centerTitle: false,
+              centerTitle: centerTitle,
             ),
             const Divider(height: 1),
           ],
