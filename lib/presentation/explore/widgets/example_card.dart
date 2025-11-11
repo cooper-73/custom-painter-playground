@@ -1,5 +1,6 @@
 import 'package:custom_painter_playground/core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ExampleCard extends StatelessWidget {
   const ExampleCard({
@@ -11,14 +12,17 @@ class ExampleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: Stack(
-        children: [
-          const _Background(),
-          const _GradientMask(),
-          _Title(title: patternKind.title),
-        ],
+    return GestureDetector(
+      onTap: () => context.push(AppRoutes.playgroundPath(patternKind.name)),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Stack(
+          children: [
+            const _Background(),
+            const _GradientMask(),
+            _Title(title: patternKind.title),
+          ],
+        ),
       ),
     );
   }
