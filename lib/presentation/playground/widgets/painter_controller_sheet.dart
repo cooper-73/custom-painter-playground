@@ -13,7 +13,7 @@ class PainterControllerSheet extends StatelessWidget {
   bool get _hasPainterControls => painterControls.isNotEmpty;
 
   static const defaultChildSize = 0.4;
-  static const minimumChildSize = 0.2;
+  static const minimumChildSize = 0.22;
   static const _maximumChildSize = 0.6;
 
   @override
