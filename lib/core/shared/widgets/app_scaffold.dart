@@ -6,11 +6,15 @@ class AppScaffold extends StatelessWidget {
     this.title,
     required this.body,
     this.centerTitle = false,
+    this.bottomSafeArea = true,
+    this.bodyPadding,
   });
 
   final String? title; // TODO: Make this required
   final Widget body;
   final bool centerTitle;
+  final bool bottomSafeArea;
+  final EdgeInsets? bodyPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +33,9 @@ class AppScaffold extends StatelessWidget {
         ),
       ),
       body: SafeArea(
+        bottom: bottomSafeArea,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+          padding: bodyPadding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
           child: body,
         ),
       ),
