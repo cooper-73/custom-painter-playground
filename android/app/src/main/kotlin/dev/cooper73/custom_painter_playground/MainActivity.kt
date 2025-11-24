@@ -1,4 +1,4 @@
-package com.example.custom_painter_playground
+package dev.cooper73.custom_painter_playground
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -12,6 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      title: 'Custom Painter Playground',
       theme: AppTheme.dark,
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,

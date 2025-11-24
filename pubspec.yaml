@@ -1,7 +1,7 @@
 name: custom_painter_playground
 description: "A new Flutter project."
 publish_to: "none"
-version: 0.1.0
+version: 0.1.0+1
 
 environment:
   sdk: ^3.9.2
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.8
   flutter_riverpod: ^3.0.3
   freezed_annotation: ^3.1.0
   go_router: ^16.3.0
